@@ -1,9 +1,10 @@
 # Piccolina
 
-A Discord chat bot that uses the OpenAI assistant API in order to receive and generate prompts from the user on Discord. Gathers and stores information about the user's prompts and stores them in a file to be used as relevant information for future conversations.
+A Discord chat bot that uses the OpenAI assistant API in order to receive and generate prompts from the user on Discord.
+
+The chat bot uses Retrieval-Augmented Generation (RAG) to generate its responses. Embeddings are generated on every message from the user and stored in a MongoDB cluster. It then uses Mongo's Atlas Search to find relevant information using vector search. The relevant messages are then passed
+back to the AI to use as contextual information in its response.
 
 
 ## In Progress:
-		1. Migrate the contextual information for future conversations from a local file to MongoDB.
-		2. Create unique context files for different users.
-		3. Use NLP to fully optimize the contextual information gathered from the user.
+		1. Use NLP to fully optimize the contextual information gathered from the user.
